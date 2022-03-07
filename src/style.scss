@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.App{
+    .nav{
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgb(127, 22, 141);
+        margin-bottom: 20px;
+        a{
+            color: #fff;
+            margin: 20px;
+            font-size: 20px;
+        }
+    }
+    .lists{
+        .list{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 40px;
+            border: 2px solid rgb(127, 22, 141);
+            padding: 25px 5px 25px 35px;
+            margin: 15px 250px;
+            transition:0.3s;
+
+            &:hover{
+                cursor: pointer;
+                background:rgba(127, 22, 141, 0.521);
+                transition:0.3s;
+                h1{
+                    color:#fff;
+                }
+                button{
+                    color: #7f168d;
+                    background: #fff;
+                    // border-color: #fff;
+                    cursor: pointer;
+
+                    // &:hover{
+                    //     background:#0ECBF1;
+                    // }
+                }
+            }
+            h1{
+                font-size: 25px;
+                color: rgb(127, 22, 141);
+            }
+            button{
+                font-weight: bold;
+                background: rgb(127, 22, 141);
+                border: 2px solid rgb(127, 22, 141);
+                color: #fff;
+                padding: 10px 25px;
+                margin-left: 15px;
+            }
+        } // list
+    } // lists
+
+    .Add{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+
+        input{
+            border: 2px solid rgb(127, 22, 141);
+            padding: 5px 10px;
+            font-size: 18px;
+            margin-right: 15px;
+            outline: none;
+
+            &:hover{
+                cursor: pointer;
+
+            }
+            &:focus{
+                cursor: text;
+                box-shadow: 0 0 4px rgba(127, 22, 141, 0.5);
+            }
+        }
+        button{
+            background: none;
+            border: 2px solid rgb(127, 22, 141);
+            font-size: 18px;
+            color: rgb(127, 22, 141);
+            padding: 5px 20px;
+            font-weight: 700;
+            transition:0.3s;
+            
+            &:hover{
+                transition:0.3s;
+                cursor: pointer;
+                background: rgb(127, 22, 141);
+                color: #fff;
+            }
+        }
+    }
+}// App

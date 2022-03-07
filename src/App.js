@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import Add from './components/Add';
+import List from './components/List';
+import TodoEdit from './components/TodoEdit';
+import { todoGet } from './store/todoSlice';
+import './style.scss'
 
-function App() {
-  return (
+const App = () => {
+    const state = useSelector( (state) => {
+        return state.todo
+    })
+
+    const dispatch = useDispatch()
+
+    useEffect( () => {
+        dispatch(todoGet())
+
+    }, [ state.redirectDel, dispatch, state.redirectPost, state.redirectPut ])
+
+  return ( 
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <div className="nav">
+          <Link to="/">add</Link>
+          <Link to="/list">list</Link>
+        </div>
+        <Routes>
+          <Route path="/" element={<Add />} />
+          <Route path="/list" element={<List />} />
+          <Route path="/list/:id" element={<TodoEdit />} />
+        </Routes>
+      </BrowserRouter>
     </div>
-  );
+   );
 }
-
+ 
 export default App;
